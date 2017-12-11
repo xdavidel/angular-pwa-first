@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" class="has-navbar-fixed-top">
+
+<head>
+  <meta charset="utf-8">
+  <title>AngularPwaFirst</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- PWA -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-starturl" content="/">
+  <meta name="theme-color" content="#fff">
+  <link rel="manifest" href="./manifest.json">
+
+
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+</head>
+
+<body>
+  <app-root></app-root>
+
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => {
+          console.log('SW registered')
+        })
+        .catch(err => {
+          console.error('SW Error', err)
+        })
+    }
+  </script>
+</body>
+
+</html>
